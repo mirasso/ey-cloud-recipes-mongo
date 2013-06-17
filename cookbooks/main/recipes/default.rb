@@ -48,7 +48,7 @@
 
 #uncomment to run the exim::auth recipe
 #include_recipe "exim::auth"
-#include_recipe "mongodb"
+include_recipe "mongodb"
 
 #uncomment to run the resque recipe
 # include_recipe "resque"
@@ -144,4 +144,5 @@
   # postgresql9_pg_freespacemap "postgres"
 #end
 
+require_recipe "timezone"
 require_recipe "comap_app_cron"
