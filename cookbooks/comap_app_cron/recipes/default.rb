@@ -14,7 +14,7 @@ end
 if instance_role?(:app_master)
   cron "create_daily_report" do
     minute '30'
-    hour '1'
+    hour '0'
     user 'deploy'
     command 'nice php /data/comap/current/cli/create_daily_report.php > /data/comap/shared/log/daily_report.log 2>&1'
   end
