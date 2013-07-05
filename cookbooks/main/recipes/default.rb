@@ -144,5 +144,6 @@ include_recipe "mongodb"
   # postgresql9_pg_freespacemap "postgres"
 #end
 
+include_recipe "newrelic"
 require_recipe "timezone"
 require_recipe "comap_app_cron"
