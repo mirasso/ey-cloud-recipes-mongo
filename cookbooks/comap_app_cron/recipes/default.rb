@@ -16,6 +16,12 @@ if instance_role?(:app_master)
     minute '30'
     hour '0'
     user 'deploy'
-    command 'nice php /data/comap/current/cli/create_daily_report.php > /data/comap/shared/log/daily_report.log 2>&1'
+    command 'nice php /data/comap/current/cli/batch/create_daily_report.php > /data/comap/shared/log/daily_report.log 2>&1'
+  end
+  cron "send_daily_mail" do
+    minute '30'
+    hour '9'
+    user 'deploy'
+    command 'nice php /data/comap/current/cli/batch/send_daily_mail.php > /data/comap/shared/log/daily_mail.log 2>&1'
   end
 end
